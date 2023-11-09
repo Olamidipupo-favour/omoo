@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-y9ee*f)6siq7ir8=7!i4s4qgnf#qlrsor81teb4xgqnf4b4&)y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["evotez.onrender.com"]
 
 
 # Application definition
@@ -60,7 +60,7 @@ TEMPLATES = [
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
-             'libraries': {
+            'libraries': {
                 'custom_filters': 'vote.templatetags.custom_filters',
             },
             'context_processors': [
