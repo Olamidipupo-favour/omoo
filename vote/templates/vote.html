@@ -1,0 +1,46 @@
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vote Page</title>
+  </head>
+  <body>
+    <h1>Vote for Candidates</h1>
+
+    <form method="post">
+      {% csrf_token %}
+      <h2>Positions</h2>
+      <ul>
+        {% for position in positions %}
+        <li>{{ position.name }}</li>
+        <ul>
+          {% for candidate in candidates %} 
+          {% if candidate.position_id == position.id %}
+          <li>
+            <input
+              type="radio"
+              name="candidate_id"
+              value="{{ candidate.id }}"
+            />
+            {% for key, value in votez.items %}
+            {% if key == candidate.id %}
+            <span>Votes: {{ value }}</span>
+            {% endif %}
+            {% endfor %}
+            <input 
+            type="hidden"
+            name="position_id"
+            value="{{ position.id }}"
+            />
+            {{ candidate.name }}
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+        {% endfor %}
+      </ul>
+      <input type="submit" value="Vote" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        p {
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verify that you are you</h1>
+
+        <p>Enter the OTP displayed below:</p>
+        <div id="otp-display">
+            <!-- OTP will be displayed here -->
+        </div>
+
+        <input type="text" id="otp-input" placeholder="Enter OTP" />
+        <button id="verify-button">Verify</button>
+
+        <p id="result-message"></p>
+
+        <script>
+            // Function to generate a random 6-digit OTP
+            function generateOTP() {
+                return Math.floor(100000 + Math.random() * 900000);
+            }
+
+            // Display the generated OTP
+            document.getElementById('otp-display').textContent = generateOTP();
+
+            // Verify the OTP
+            document.getElementById('verify-button').addEventListener('click', function () {
+                var enteredOTP = document.getElementById('otp-input').value;
+                var generatedOTP = document.getElementById('otp-display').textContent;
+
+                if (enteredOTP === generatedOTP) {
+                    document.getElementById('result-message').textContent = 'OTP Verified Successfully';
+                    setTimeout(function () {
+                window.location.href = '/vote/vote';
+            }, 2000);
+                } else {
+                    document.getElementById('result-message').textContent = 'Invalid OTP. Please try again.';
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

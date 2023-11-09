@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .admin-page {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .result-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #e1e1e1;
+    }
+
+    .result-item:last-child {
+      border-bottom: none;
+    }
+
+    .candidate-name {
+      font-weight: bold;
+    }
+
+    .percentage {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-page">
+    <h1>Voting Results</h1>
+    <div class="result-item">
+      <span class="candidate-name">Bola Ahmed Tinubu</span>
+      <span class="percentage">45%</span>
+    </div>
+    <div class="result-item">
+      <span class="candidate-name">Peter Obi</span>
+      <span class="percentage">35%</span>
+    </div>
+    <div class="result-item">
+      <span class="candidate-name">Atiku Abubakar</span>
+      <span class="percentage">20%</span>
+    </div>
+  </div>
+</body>
+</html>

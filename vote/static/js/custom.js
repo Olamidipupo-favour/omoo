@@ -1,0 +1,2 @@
+
+var pAgree = '1';
